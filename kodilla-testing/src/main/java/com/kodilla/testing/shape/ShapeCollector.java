@@ -8,19 +8,27 @@ public class ShapeCollector {
     List<Shape> shapeList = new ArrayList<>();
 
     public void addFigure(Shape shape){
-        //TBD
+        shapeList.add(shape);
     }
     public boolean removeFigure(Shape shape){
-        //TBD - temporarily return true
-        return true;
+        for (Shape shapeFromList : shapeList) {
+            if (shapeFromList.equals(shape)){
+                shapeList.remove(shape);
+                return true;
+            }
+        }
+        return false;
     }
     public Shape getFigure(int n){
-        //TBD
-        return null;
+
+        return shapeList.get(n);
     }
 
     public String showFigures(){
-        //TBD
-        return null;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Shape shapeFromList : shapeList) {
+            stringBuilder.append(shapeFromList.toString());
+        }
+        return stringBuilder.toString();
     }
 }

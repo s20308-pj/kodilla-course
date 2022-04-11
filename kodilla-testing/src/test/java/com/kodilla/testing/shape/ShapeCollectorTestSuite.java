@@ -57,7 +57,7 @@ class ShapeCollectorTestSuite {
             shapeCollector.addFigure(square);
 
             //Then
-            Assertions.assertEquals(shapeCollector.shapeList.get(2), square);
+            Assertions.assertEquals(shapeCollector.shapeList.get(0), square);
         }
 
         @Test
@@ -107,7 +107,7 @@ class ShapeCollectorTestSuite {
             boolean result = shapeCollector.removeFigure(circle);
 
             //Then
-            Assertions.assertTrue(result);
+            Assertions.assertFalse(result);
         }
     }
 
@@ -116,6 +116,7 @@ class ShapeCollectorTestSuite {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Triangle triangle = new Triangle(10);
+        shapeCollector.addFigure(triangle);
 
         //When
         Shape resultTriangle = shapeCollector.getFigure(0);
@@ -130,10 +131,12 @@ class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         Triangle triangle = new Triangle(10);
         Circle circle = new Circle(15.3);
-        String expectedString = triangle.toString() +
+        String expectedString = triangle +
                 circle.toString();
 
         //When
+        shapeCollector.addFigure(triangle);
+        shapeCollector.addFigure(circle);
         String result = shapeCollector.showFigures();
 
         //Then
