@@ -131,7 +131,7 @@ class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         Triangle triangle = new Triangle(10);
         Circle circle = new Circle(15.3);
-        String expectedString = triangle +
+        String expectedString = triangle.toString() +
                 circle.toString();
 
         //When
