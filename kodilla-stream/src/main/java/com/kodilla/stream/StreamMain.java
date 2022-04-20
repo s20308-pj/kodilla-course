@@ -1,5 +1,6 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.array.ArrayOperations;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
@@ -33,15 +34,17 @@ public class StreamMain {
 //
 //        System.out.println(theResultStringOfBooks);
 
-        Forum forum = new Forum();
+//        Forum forum = new Forum();
 
-        Map<Integer, ForumUser> forumUserMap = forum.getForumUsersList().stream()
-                .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> forumUser.getDateOfBirth().getYear() < 2002)
-                .filter(forumUser -> forumUser.getNumberOdPublishedPosts() > 1)
-                .collect(Collectors.toMap(ForumUser::getId, forumUser -> forumUser));
+//        Map<Integer, ForumUser> forumUserMap = forum.getForumUsersList().stream()
+//                .filter(forumUser -> forumUser.getSex() == 'M')
+//                .filter(forumUser -> forumUser.getDateOfBirth().getYear() < 2002)
+//                .filter(forumUser -> forumUser.getNumberOdPublishedPosts() > 1)
+//                .collect(Collectors.toMap(ForumUser::getId, forumUser -> forumUser));
+//
+//        forumUserMap.forEach((key, value) -> System.out.println("key: <<" + key + ">> Value: " + value));
 
-        forumUserMap.forEach((key, value) -> System.out.println("key: <<" + key + ">> Value: " + value));
+
     }
 }
 

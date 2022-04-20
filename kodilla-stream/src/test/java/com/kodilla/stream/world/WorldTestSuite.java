@@ -1,4 +1,4 @@
-package com.kodilla.stream;
+package com.kodilla.stream.world;
 
 import com.kodilla.stream.world.Continent;
 import com.kodilla.stream.world.Country;
@@ -71,13 +71,10 @@ public class WorldTestSuite {
         expectedSum = expectedSum.add(ethiopia.getPeopleQuantity());
         expectedSum = expectedSum.add(southAfrica.getPeopleQuantity());
 
-        System.out.println(expectedSum);
-
         //When
         BigDecimal peopleSum = world.getPeopleQuantity();
 
         //Then
         Assertions.assertEquals(expectedSum,peopleSum);
-
     }
 }
