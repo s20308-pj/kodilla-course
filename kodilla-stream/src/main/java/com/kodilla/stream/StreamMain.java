@@ -4,6 +4,7 @@ import com.kodilla.stream.array.ArrayOperations;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
+import java.time.LocalDate;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -43,7 +44,6 @@ public class StreamMain {
 //                .collect(Collectors.toMap(ForumUser::getId, forumUser -> forumUser));
 //
 //        forumUserMap.forEach((key, value) -> System.out.println("key: <<" + key + ">> Value: " + value));
-
 
     }
 }
