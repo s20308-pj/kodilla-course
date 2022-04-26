@@ -18,7 +18,7 @@ public class FirstChallenge {
         double result = firstChallenge.divide(3, 0);
         System.out.println(result);
         } catch (ArithmeticException e){
-            System.out.println("Don't don't divide by zero
-
+            System.out.println("Don't divide by zero!!");
+        }
     }
 }
