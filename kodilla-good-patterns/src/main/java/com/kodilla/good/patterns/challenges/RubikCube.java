@@ -11,12 +11,11 @@ public class RubikCube implements ProductInterface {
         this.price = price;
     }
 
-    @Override
+
     public boolean isAvailable() {
         return isAvailable;
     }
 
-    @Override
     public String getProductName() {
         return name;
     }

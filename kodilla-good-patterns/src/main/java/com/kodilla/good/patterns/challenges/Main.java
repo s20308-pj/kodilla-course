@@ -13,7 +13,7 @@ public class Main {
         BuyService buy = new BuyAuction();
 
         ProductOrderService productOrderService = new ProductOrderService(product,users, inform, buy);
-        productOrderService.processes(new BuyRequest(24));
+        productOrderService.processes(new BuyRequest(26));
 
 
     }
