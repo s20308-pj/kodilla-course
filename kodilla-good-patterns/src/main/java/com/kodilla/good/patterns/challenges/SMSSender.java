@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
-public class SendSMS implements InformService {
+public class SMSSender implements InformService {
     @Override
     public void informSeller(Seller seller, String address) {
         //send SMS - inform that product has been sold, send product by buyer's address

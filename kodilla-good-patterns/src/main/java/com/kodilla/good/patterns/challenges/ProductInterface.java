@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
-public interface ProductRepository {
+public interface ProductInterface {
 
     boolean isAvailable();
 

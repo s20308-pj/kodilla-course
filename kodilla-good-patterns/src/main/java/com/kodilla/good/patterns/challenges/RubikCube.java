@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
-public class RubikCube implements ProductRepository {
+public class RubikCube implements ProductInterface {
     private boolean isAvailable;
     private String name;
     private double price;

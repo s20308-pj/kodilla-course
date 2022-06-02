@@ -7,9 +7,9 @@ public class Main {
 //        movieStore.getMovies().values().forEach(
 //                translation -> translation.forEach(title -> System.out.print(title + "! ")));
 
-        ProductRepository product = new RubikCube("3x3", 25);
+        ProductInterface product = new RubikCube("3x3", 25);
         UserRepository users = new BuyerSellerList();
-        InformService inform = new SendSMS();
+        InformService inform = new SMSSender();
         BuyService buy = new BuyAuction();
 
         ProductOrderService productOrderService = new ProductOrderService(product,users, inform, buy);
