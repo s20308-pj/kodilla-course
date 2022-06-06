@@ -1,4 +1,4 @@
-package com.kodilla.spring.forum;
+package com.kodilla.spring.library;
 
 import com.kodilla.spring.library.LibraryDbController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ public final class Library {
     private List<String> books = new ArrayList<>();
     private LibraryDbController libraryDbController;
 
-    @Autowired
+
     public Library(final LibraryDbController libraryDbController) {
         this.libraryDbController = libraryDbController;
     }
