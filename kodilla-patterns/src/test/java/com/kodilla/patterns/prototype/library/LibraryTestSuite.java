@@ -20,20 +20,40 @@ public class LibraryTestSuite {
         Book book7 = new Book("title one book 7", "Janusz 7", LocalDate.of(1989,7,7));
         Book book8 = new Book("title one book 8", "Janusz 8", LocalDate.of(1980,8,8));
 
-        Library library1 = new Library("library 1");
+        Library library = new Library("library 1");
 
-        library1.getBooks().add(book1);
-        library1.getBooks().add(book2);
-        library1.getBooks().add(book3);
-        library1.getBooks().add(book4);
-        library1.getBooks().add(book5);
-        library1.getBooks().add(book6);
-        library1.getBooks().add(book7);
-        library1.getBooks().add(book8);
+        library.getBooks().add(book1);
+        library.getBooks().add(book2);
+        library.getBooks().add(book3);
+        library.getBooks().add(book4);
+        library.getBooks().add(book5);
+        library.getBooks().add(book6);
+        library.getBooks().add(book7);
+        library.getBooks().add(book8);
 
         //When
+        Library shallowCopyOfLibrary = null;
+        try {
+            shallowCopyOfLibrary = library.shallowCopy();
+            shallowCopyOfLibrary.setName("library 2");
+        } catch (CloneNotSupportedException e){
+            System.out.println(e);
+        }
+
+        Library deepCopyOfLibrary = null;
+        try {
+            deepCopyOfLibrary = library.deepCopy();
+            deepCopyOfLibrary.setName("library 3");
+        } catch (CloneNotSupportedException e){
+            System.out.println(e);
+        }
+        library.getBooks().remove(book1);
         //Then
-        System.out.println(library1);
-        Assertions.assertEquals(8, library1.getBooks().size());
+        System.out.println(library);
+        Assertions.assertEquals(7, library.getBooks().size());
+        Assertions.assertEquals(7,shallowCopyOfLibrary.getBooks().size());
+        Assertions.assertEquals(8,deepCopyOfLibrary.getBooks().size());
+
+
     }
 }
