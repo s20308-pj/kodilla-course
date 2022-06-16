@@ -9,4 +9,5 @@ include 'kodilla-spring'
 include 'kodilla-spring-web'
 include 'untitled'
 include 'kodilla-patterns'
+include 'kodilla-jdbc'
 

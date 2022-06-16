@@ -1,0 +1,42 @@
+DROP TABLE IF EXISTS ISSUES;
+
+DROP TABLE IF EXISTS ISSUESLISTS;
+
+CREATE TABLE ISSUESLISTS
+(
+    ID   SERIAL PRIMARY KEY,
+    NAME VARCHAR(1024)
+);
+
+CREATE TABLE ISSUES
+(
+    ID                  SERIAL PRIMARY KEY,
+    ISSUESLIST_ID       BIGINT UNSIGNED NOT NULL,
+    USER_ID_ASSIGNED_TO BIGINT UNSIGNED NOT NULL,
+    SUMMARY             VARCHAR(1034),
+    DESCRIPTION         VARCHAR(1024),
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS (ID),
+    FOREIGN KEY (USER_ID_ASSIGNED_TO) REFERENCES USERS (ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ('ToDo'),
+       ('in progress'),
+       ('Done');
+
+INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNED_TO, SUMMARY, DESCRIPTION)
+VALUES (1, 1, 'Task one', 'First example in ToDo'),
+       (1, 2, 'Task two', 'Second example in ToDo'),
+       (1, 3, 'Task three', 'Third example in ToDo'),
+       (1, 4, 'Task four', 'Fourth example in ToDo'),
+       (1, 5, 'Task five', 'Fifth example in ToDo'),
+       (2, 1, 'Task six', 'First example in in progress'),
+       (2, 2, 'Task seven', 'Second example in in progress'),
+       (2, 3, 'Task eight', 'Third example in in progress'),
+       (2, 4, 'Task nine', 'Fourth example in in progress'),
+       (2, 5, 'Task ten', 'Fifth example in in progress'),
+       (3, 1, 'Task eleven', 'First example in Done'),
+       (3, 2, 'Task twelve', 'Second example in Done'),
+       (3, 3, 'Task thirteenth', 'Third example in Done'),
+       (3, 4, 'Task fourteenth', 'Fourth example in Done'),
+       (3, 5, 'Task fifteenth', 'Fifth example in Done');
