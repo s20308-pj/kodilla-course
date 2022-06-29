@@ -21,6 +21,10 @@ public class Invoice {
     public Invoice(String number) {
         this.number = number;
     }
+    public void addItem(Item item) {
+        items.add(item);
+        item.setInvoice(this);
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull

@@ -36,7 +36,9 @@ public class Item {
         return id;
     }
 
-    @ManyToOne
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
@@ -74,7 +76,7 @@ public class Item {
         this.quantity = quantity;
     }
 
-    private void setInvoice(Invoice invoice) {
+    public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
     }
 

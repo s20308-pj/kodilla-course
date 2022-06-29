@@ -34,9 +34,9 @@ public class InvoiceDaoTestSuite {
         product1.addItem(item1);
         product1.addItem(item2);
         product2.addItem(item3);
-        invoice.getItems().add(item1);
-        invoice.getItems().add(item2);
-        invoice.getItems().add(item3);
+        invoice.addItem(item1);
+        invoice.addItem(item2);
+        invoice.addItem(item3);
 
         //When
         invoiceDao.save(invoice);
