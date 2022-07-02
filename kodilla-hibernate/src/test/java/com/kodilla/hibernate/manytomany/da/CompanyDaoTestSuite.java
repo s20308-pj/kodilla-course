@@ -98,7 +98,7 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //When
-        List<Employee> expectedEmployeeList = employeeDao.findByFirstName("John");
+        List<Employee> expectedEmployeeList = employeeDao.findByLastName("Smith");
 
         //Then
         Assertions.assertEquals(1, expectedEmployeeList.size());

@@ -5,8 +5,8 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(name = "Employee.findByFirstName",
-            query = "FROM Employee WHERE firstname LIKE :FIRSTNAME")
+@NamedQuery(name = "Employee.findByLastName",
+            query = "FROM Employee WHERE lastname LIKE :LASTNAME")
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
