@@ -10,6 +10,10 @@ import java.util.List;
         name = "Company.findByFirstThreeLetters",
         query = "FROM Company WHERE SUBSTRING(name,1,3) = :TEXT"
 )
+@NamedQuery(
+        name = "Company.findByName",
+        query = "FROM Company WHERE company_name LIKE :NAME"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

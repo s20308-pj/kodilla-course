@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.function.DoubleToIntFunction;
 
 @SpringBootTest
 public class CompanyDaoTestSuite {
@@ -144,12 +145,15 @@ public class CompanyDaoTestSuite {
 
         //When
         List<Company> expectedCompanyList = companyDao.findByFirstThreeLetters("Sof");
+//        List<Company> expectedCompanyList2 = companyDao.findByName("%twar%");
 
         //Then
         Assertions.assertEquals(2, expectedCompanyList.size());
+//        Assertions.assertEquals(2, expectedCompanyList2.size());
 
         //CleanUp
         try {
+            System.out.println(softwareMachineId+ ", " + dataMaestersId + ", " + greyMatterId);
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(greyMatterId);
