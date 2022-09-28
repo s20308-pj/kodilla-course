@@ -1,9 +1,8 @@
-package com.kodilla.patterns2.facade;
+package com.kodilla.patterns2.observer.facade;
 
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Iterator;
 import java.util.Random;
 
 @Service

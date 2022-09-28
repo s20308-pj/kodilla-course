@@ -2,7 +2,6 @@ package com.kodilla.patterns2.decorator.pizza;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
 
